@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  setup-and-test:
-    name: Setup, Build & Test Frontend + Backend
+  build-and-test:
+    name: Build, Test & Lint Frontend + Backend
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,7 +16,7 @@ jobs:
         node-version: [18]
 
     steps:
-      # 1️⃣ Checkout repo
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -26,37 +26,37 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      # 3️⃣ Install frontend dependencies
+      # 3️⃣ Frontend: Install dependencies
       - name: Install Frontend Dependencies
         working-directory: frontend
         run: npm install --legacy-peer-deps --include=dev
 
-      # 4️⃣ Run frontend tests
+      # 4️⃣ Frontend: Run tests
       - name: Run Frontend Tests
         working-directory: frontend
         run: npm test -- --watchAll=false
 
-      # 5️⃣ Build frontend
+      # 5️⃣ Frontend: Build production
       - name: Build Frontend
         working-directory: frontend
         run: npm run build
 
-      # 6️⃣ Install backend dependencies
-      - name: Install Backend Dependencies
-        working-directory: backend
-        run: npm install --legacy-peer-deps --include=dev
-
-      # 7️⃣ Run backend tests
-      - name: Run Backend Tests
-        working-directory: backend
-        run: npx jest --coverage
-
-      # 8️⃣ Lint frontend code
+      # 6️⃣ Frontend: Lint code
       - name: Lint Frontend
         working-directory: frontend
         run: npm run lint
 
-      # 9️⃣ Format check (optional)
+      # 7️⃣ Frontend: Format check
       - name: Prettier Format Check
         working-directory: frontend
         run: npm run format -- --check
+
+      # 8️⃣ Backend: Install dependencies
+      - name: Install Backend Dependencies
+        working-directory: backend
+        run: npm install --legacy-peer-deps --include=dev
+
+      # 9️⃣ Backend: Run tests
+      - name: Run Backend Tests
+        working-directory: backend
+        run: npx jest --coverage
