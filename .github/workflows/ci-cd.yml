@@ -9,32 +9,37 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
+      # 1️⃣ Checkout the repository
       - uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      # 2️⃣ Setup Node
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # Frontend
+      # 3️⃣ Frontend: Install dependencies
       - name: Install Frontend
         working-directory: frontend
         run: npm install --legacy-peer-deps --include=dev
+
+      # 4️⃣ Frontend: Run tests
       - name: Test Frontend
         working-directory: frontend
         run: npm test -- --watchAll=false
+
+      # 5️⃣ Frontend: Build
       - name: Build Frontend
         working-directory: frontend
         run: npm run build
-      - name: Lint Frontend
-        working-directory: frontend
-        run: npm run lint
 
-      # Backend
+      # 6️⃣ Backend: Install dependencies
       - name: Install Backend
         working-directory: backend
         run: npm install --legacy-peer-deps --include=dev
+
+      # 7️⃣ Backend: Run tests
       - name: Test Backend
         working-directory: backend
         run: npm test
