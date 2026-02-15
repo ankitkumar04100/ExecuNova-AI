@@ -1,0 +1,69 @@
+/* Global styles for ExecuNova AI */
+
+/* Font and body */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #1F2937 0%, #4F46E5 100%);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  color: #A78BFA;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  background-color: #4F46E5;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #7C3AED;
+  cursor: pointer;
+}
+
+/* Cards */
+.card {
+  background-color: rgba(55, 65, 81, 0.9); /* Indigo-800 transparent */
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1F2937;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #4F46E5;
+  border-radius: 10px;
+  border: 2px solid #1F2937;
+}
+
+/* Animations */
+.glow {
+  box-shadow: 0 0 8px #A78BFA, 0 0 16px #A78BFA;
+  transition: all 0.3s ease-in-out;
+}
