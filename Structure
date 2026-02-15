@@ -1,0 +1,61 @@
+ExecuNova-AI/
+├── README.md
+├── LICENSE
+├── .gitignore
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+├── WORKFLOWS.md
+├── .github/
+│   └── workflows/
+│       └── ci.yml               
+├── frontend/
+│   ├── package.json             
+│   ├── package-lock.json
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── assets/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── TaskCard.jsx
+│   │   │   ├── RiskMeter.jsx
+│   │   │   └── ChartVisualization.jsx
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   └── About.jsx
+│   │   ├── styles/
+│   │   │   ├── tailwind.css
+│   │   │   └── global.css
+│   │   ├── utils/
+│   │   │   ├── api.js
+│   │   │   ├── scheduler.js
+│   │   │   └── riskCalculator.js
+│   │   └── App.jsx
+│   └── tailwind.config.js
+├── backend/
+│   ├── package.json              
+│   ├── package-lock.json
+│   ├── server.js
+│   ├── routes/
+│   │   └── tasks.js
+│   ├── controllers/
+│   │   └── taskController.js
+│   ├── services/
+│   │   └── aiService.js
+│   └── models/
+│       └── taskModel.js
+├── data/
+│   └── sampleTasks.json
+├── diagrams/
+│   ├── architecture.png
+│   └── ai_pipeline.png
+├── docs/
+│   ├── ARCHITECTURE.md
+│   └── CASE_STUDIES.md
+├── tests/
+│   ├── frontend.test.js
+│   └── backend.test.js
+└── demo/
+    └── execunova-demo.gif
