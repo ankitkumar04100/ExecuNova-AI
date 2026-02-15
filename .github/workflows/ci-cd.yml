@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the repository
+      # 1️⃣ Checkout repository
       - uses: actions/checkout@v3
 
       # 2️⃣ Setup Node
@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: 18
 
-      # 3️⃣ Frontend: Install dependencies
+      # 3️⃣ Frontend: Install dependencies (fixed)
       - name: Install Frontend
         working-directory: frontend
-        run: npm install --legacy-peer-deps --include=dev
+        run: npm ci --legacy-peer-deps --include=dev
 
       # 4️⃣ Frontend: Run tests
       - name: Test Frontend
@@ -37,7 +37,7 @@ jobs:
       # 6️⃣ Backend: Install dependencies
       - name: Install Backend
         working-directory: backend
-        run: npm install --legacy-peer-deps --include=dev
+        run: npm ci --legacy-peer-deps --include=dev
 
       # 7️⃣ Backend: Run tests
       - name: Test Backend
