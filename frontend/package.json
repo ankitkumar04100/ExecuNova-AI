@@ -1,29 +1,17 @@
 {
   "name": "execunova-frontend",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "lint": "eslint ./src --ext .js,.jsx",
-    "format": "prettier --write ./src/**/*.jsx ./src/**/*.js ./src/**/*.css"
+    "test": "react-scripts test --watchAll=false"
   },
- "dependencies": {
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-  "tailwindcss": "^4.3.2",
-  "axios": "^1.5.0",
-  "chart.js": "^4.3.0",
-  "react-chartjs-2": "^5.2.0"
-},
-"devDependencies": {
-  "react-scripts": "5.0.1",
-  "@testing-library/react": "^14.0.0",
-  "@testing-library/jest-dom": "^6.0.0",
-  "@testing-library/user-event": "^14.6.0",
-  "eslint": "^8.48.0",
-  "eslint-plugin-react": "^7.34.0",
-  "eslint-config-prettier": "^9.2.0",
-  "prettier": "^3.5.0"
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.0",
+    "chart.js": "^4.2.1",
+    "recharts": "^2.3.0",
+    "axios": "^1.4.0"
+  }
 }
