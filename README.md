@@ -4,6 +4,8 @@
 
 ExecuNova AI is a next-generation productivity tool that predicts whether you'll meet your deadlines, breaks tasks into actionable daily plans, and dynamically adjusts your schedule to maximize completion success.
 
+[Demo](https://app.creao.ai/workspace/6994546b1cbdfd039732aea5/threads/05b6a803-b6de-400d-8f53-849182167e98?miniAppId=sazEqsFswk)
+
 ---
 
 ## Features
