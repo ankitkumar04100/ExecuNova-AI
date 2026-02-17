@@ -94,28 +94,28 @@ const AIEngine = {
         // Generate detailed AI recommendations
         const recommendations = [];
         if (probability < 70) {
-            recommendations.push(`⏰ Increase daily hours to ${Math.ceil(correctedHours / daysUntilDeadline)}h to improve success probability`);
+            recommendations.push(`â° Increase daily hours to ${Math.ceil(correctedHours / daysUntilDeadline)}h to improve success probability`);
         }
         if (probability < 50) {
-            recommendations.push('📅 Consider extending deadline by ' + Math.ceil((correctedHours - effectiveHours) / (hoursPerDay * energyLevel)) + ' days or reducing project scope');
-            recommendations.push('🎯 Prioritize high-priority subtasks first to deliver core functionality');
-            recommendations.push('🔄 Break down large subtasks into smaller 2-3 hour chunks for better tracking');
+            recommendations.push('ðŸ“… Consider extending deadline by ' + Math.ceil((correctedHours - effectiveHours) / (hoursPerDay * energyLevel)) + ' days or reducing project scope');
+            recommendations.push('ðŸŽ¯ Prioritize high-priority subtasks first to deliver core functionality');
+            recommendations.push('ðŸ”„ Break down large subtasks into smaller 2-3 hour chunks for better tracking');
         }
         if (energyLevel < 0.8) {
-            recommendations.push('💪 Schedule regular breaks every 90 minutes to maintain energy and productivity');
-            recommendations.push('🌙 Ensure adequate sleep (7-8 hours) for sustained performance');
+            recommendations.push('ðŸ’ª Schedule regular breaks every 90 minutes to maintain energy and productivity');
+            recommendations.push('ðŸŒ™ Ensure adequate sleep (7-8 hours) for sustained performance');
         }
         if (subtasks.length > 5) {
-            recommendations.push('📊 Complex project detected - consider breaking down subtasks further for better granularity');
+            recommendations.push('ðŸ“Š Complex project detected - consider breaking down subtasks further for better granularity');
         }
         if (probability >= 70 && probability < 85) {
-            recommendations.push('✅ You\'re on track! Build in buffer time for unexpected challenges');
+            recommendations.push('âœ… You\'re on track! Build in buffer time for unexpected challenges');
         }
         if (probability >= 85) {
-            recommendations.push('🚀 Excellent planning! You have comfortable margin for quality and refinement');
+            recommendations.push('ðŸš€ Excellent planning! You have comfortable margin for quality and refinement');
         }
         if (daysUntilDeadline <= 2) {
-            recommendations.push('⚡ Tight deadline - minimize distractions and use time-blocking techniques');
+            recommendations.push('âš¡ Tight deadline - minimize distractions and use time-blocking techniques');
         }
 
         return {
@@ -640,7 +640,7 @@ function RiskAnalysis({ riskAnalysis, subtasks, toggleSubtask, onReset }) {
                 <ul className="space-y-2">
                     {riskAnalysis.recommendations.map((rec, idx) => (
                         <li key={idx} className="flex items-start gap-3 text-blue-800">
-                            <span className="text-blue-500 font-bold">•</span>
+                            <span className="text-blue-500 font-bold">â€¢</span>
                             <span>{rec}</span>
                         </li>
                     ))}
@@ -830,7 +830,7 @@ function DailyCard({ day, dayNumber }) {
                             {new Date(day.date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
                         </div>
                         <div className="text-sm text-gray-600">
-                            {day.plannedHours}h planned • {day.tasks.length} tasks • {day.utilization}% capacity
+                            {day.plannedHours}h planned â€¢ {day.tasks.length} tasks â€¢ {day.utilization}% capacity
                         </div>
                     </div>
                 </div>
@@ -907,7 +907,7 @@ function TaskHistory({ tasks, setTasks }) {
                         <div className="flex-1">
                             <div className="font-semibold text-gray-800">{task.name}</div>
                             <div className="text-sm text-gray-600">
-                                Deadline: {new Date(task.deadline).toLocaleDateString()} •
+                                Deadline: {new Date(task.deadline).toLocaleDateString()} â€¢
                                 Risk: <span className={
                                     task.risk.riskLevel === 'low' ? 'text-green-600' :
                                     task.risk.riskLevel === 'medium' ? 'text-yellow-600' :
